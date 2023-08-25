@@ -18,7 +18,8 @@ Opens the original file at self.path in read mode and the target compressed file
 Reads the contents of the original file into a string variable text
 
 
-Decompression: <br>
+Decompression: 
+
 The decompress function takes the path of the compressed file as input, decompresses the data and writes it to a new file with _decrypted.txt appended to the original filename.
 First, the function extracts the filename and extension from the input file path using os.path.splitext. It then creates an output file path by appending _deccrypted.txt to the filename.
 The function opens both the input file in binary read mode and the output file in write mode. Inside a while loop, it reads each byte from the input file, converts it to a binary string of 8 bits using bin(byte)[2:].rjust(8, '0') and appends it to a bit_string variable. Once all bytes have been processed, the remove_padding function is called to remove the padding that was added during compression. The resulting encoded text is then passed to the decode_text function, which returns the original text that is written to the output file.
